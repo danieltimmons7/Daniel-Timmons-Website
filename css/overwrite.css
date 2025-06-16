@@ -130,3 +130,7 @@ body {
 .riddle-link:hover {
     background-color: #155a8a;
 }
+
+body {
+    position: relative;
+}
