@@ -26,7 +26,7 @@
     </p>
     <div class="container">
         <div class="common rightmenu">
-            <img src="../startbootstrap-clean-blog-gh-pages/assets/img/14er_Progress_Of_Daniel_Timmons.png" alt="Picture Frame of 14er Progress">
+            <img src="assets/img/14er_Progress_Of_Daniel_Timmons.png" alt="Picture Frame of 14er Progress">
         </div>
         <div class="common leftmenu">
             <ol>
@@ -121,7 +121,7 @@
         </div>  
     </div>
 
-    <img src="../startbootstrap-clean-blog-gh-pages/assets/img/Hiking_14er_With Little Brother.png" alt="Hiking Mountain with Little Brother">
+    <img src="assets/img/Hiking_14er_With Little Brother.png" alt="Hiking Mountain with Little Brother">
     <h4 class="notes">Hiking Kit Carson Peak with my Little Brother</h4>
 
     <!--insert Youtube Video Here-->
@@ -133,18 +133,28 @@
     <h4>Nice Climb, Beautiful Views</h4>
         
     <!-- insert Tableau here -->
-    <div id="tableauSection" class='tableauPlaceholder'> ... </div>
+    <div id="tableauSection" style="display: flex; justify-content: center; padding: 20px;">
+        <div 
+            class='tableauPlaceholder' 
+            id='viz1750043200299' 
+            style='max-width: 800px; width: 100%; position: relative;'>
+            
+            <noscript>
+            <a href='#'>
+                <img alt='14ers' 
+                src='https://public.tableau.com/static/images/14/14ersTableau/14ers/1_rss.png' 
+                style='border: none; width: 100%;' />
+            </a>
+            </noscript>
 
-    <div class='tableauPlaceholder' id='viz1749939493520' style='position: relative'><noscript><a href='#'><img
-                    alt='Prompt 7 '
-                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;7W&#47;7WTXX4PYD&#47;1_rss.png'
-                    style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+            <object class='tableauViz' style='display:none;'>
             <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
             <param name='embed_code_version' value='3' />
-            <param name='path' value='shared&#47;7WTXX4PYD' />
+            <param name='site_root' value='' />
+            <param name='name' value='14ersTableau&#47;14ers' />
+            <param name='tabs' value='no' />
             <param name='toolbar' value='yes' />
-            <param name='static_image'
-                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;7W&#47;7WTXX4PYD&#47;1.png' />
+            <param name='static_image' value='https://public.tableau.com/static/images/14/14ersTableau/14ers/1.png' />
             <param name='animate_transition' value='yes' />
             <param name='display_static_image' value='yes' />
             <param name='display_spinner' value='yes' />
@@ -152,91 +162,101 @@
             <param name='display_count' value='yes' />
             <param name='language' value='en-US' />
             <param name='filter' value='publish=yes' />
-        </object></div>
-    <script
-        type='text/javascript'>                   
-        var divElement = document.getElementById('viz1749939493520'); 
-        var vizElement = divElement.getElementsByTagName('object')[0]; 
-        vizElement.style.width = '100%'; 
-        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); 
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </object>
+        </div>
+    </div>
+
+    <script type='text/javascript'>                    
+        var divElement = document.getElementById('viz1750043200299');                    
+        var vizElement = divElement.getElementsByTagName('object')[0];                    
+        vizElement.style.width='100%';
+        vizElement.style.height='600px'; // fixed height to keep things manageable
+                            
+        var scriptElement = document.createElement('script');                    
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
     </script>
-    <h5>My Tableau</h5>
+    
+    
+        <h5>My Tableau</h5>
+
+
 
 <!--Insert Riddle Game-->
-    <section id="riddle-generator" style="margin-top: 60px; padding: 30px; background: rgba(255, 255, 255, 0.1); border-radius: 15px; max-width: 600px; margin-left: auto; margin-right: auto; color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    <h2 style="text-align: center; margin-bottom: 20px;">🔍 14er Riddle Generator</h2>
-    <div id="riddleBox" style="font-size: 1.2em; text-align: center; margin-bottom: 20px;">
-        Click the button below to get a riddle!
-    </div>
-    <div style="text-align: center; margin-bottom: 15px;">
-        <button id="riddleBtn" style="background-color: #ffffff; color: #3fb0e0; border: none; padding: 10px 20px; font-size: 1.1em; font-weight: bold; cursor: pointer; border-radius: 8px; transition: all 0.3s ease;">Give Me a Riddle</button>
-    </div>
-    <div id="answerSection" style="text-align: center; display: none;">
-        <input id="userAnswer" type="text" placeholder="Type your answer here" style="padding: 8px; width: 60%; font-size: 1em; border-radius: 5px; border: none; margin-bottom: 10px;">
-        <br>
-        <button id="checkAnswerBtn" style="background-color: #3fb0e0; color: white; border: none; padding: 8px 20px; font-size: 1em; cursor: pointer; border-radius: 8px; font-weight: bold;">Check Answer</button>
-    </div>
-    <div id="resultMessage" style="font-size: 1.1em; margin-top: 15px; min-height: 30px;"></div>
+    <section id="riddle-generator" style="margin-top: 60px; padding: 30px; background: rgba(255, 255, 255, 0.1); border-radius: 15px; max-width: 600px; 
+    margin-left: auto; margin-right: auto; color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <h2 style="text-align: center; margin-bottom: 20px;">🔍 14er Riddle Generator</h2>
+        <div id="riddleBox" style="font-size: 1.2em; text-align: center; margin-bottom: 20px;">
+            Click the button below to get a riddle!
+        </div>
+        <div style="text-align: center; margin-bottom: 15px;">
+            <button id="riddleBtn" style="background-color: #ffffff; color: #3fb0e0; border: none; padding: 10px 20px; font-size: 1.1em; font-weight: bold; cursor: pointer; border-radius: 8px; transition: all 0.3s ease;">Give Me a Riddle</button>
+        </div>
+        <div id="answerSection" style="text-align: center; display: none;">
+            <input id="userAnswer" type="text" placeholder="Type your answer here" style="padding: 8px; width: 60%; font-size: 1em; border-radius: 5px; border: none; margin-bottom: 10px;">
+            <br>
+            <button id="checkAnswerBtn" style="background-color: #3fb0e0; color: white; border: none; padding: 8px 20px; font-size: 1em; cursor: pointer; border-radius: 8px; font-weight: bold;">Check Answer</button>
+        </div>
+        <div id="resultMessage" style="font-size: 1.1em; margin-top: 15px; min-height: 30px;"></div>
     </section>
 
-<script>
-  // Riddles array with question and answer separated for checking
-  const riddles = [
-    { question: "I’m Colorado’s tallest, I stand proud and free — hikers aim high to summit me. What 14er am I?", answer: "mt. elbert" },
-    { question: "I’m often climbed with my twin named Torrey — together we make a peak-filled story. Who am I?", answer: "gray's peak" },
-    { question: "With my flat summit and hidden trail, I test the brave who will not fail. Who am I?", answer: "mt. bross" },
-    { question: "I'm the second highest, don’t forget — though I lose to Elbert, I’m not upset. Who am I?", answer: "mt. massive" },
-    { question: "With a name that's Presidential, I rise high and proud — standing far from city crowd. Who am I?", answer: "mt. lincoln" },
-    { question: "Pair me with Kit Carson if you dare — my jagged edges aren’t that rare. Who am I?", answer: "challenger point" },
-    { question: "I may be Sherman by name, but I’m no soldier — still, I’ve stood tall for years, getting older. Who am I?", answer: "mt. sherman" }
-  ];
+    <script>
+    // Riddles array with question and answer separated for checking
+    const riddles = [
+        { question: "I’m Colorado’s tallest, I stand proud and free — hikers aim high to summit me. What 14er am I?", answer: "mt. elbert" },
+        { question: "I’m often climbed with my twin named Torrey — together we make a peak-filled story. Who am I?", answer: "gray's peak" },
+        { question: "With my flat summit and hidden trail, I test the brave who will not fail. Who am I?", answer: "mt. bross" },
+        { question: "I'm the second highest, don’t forget — though I lose to Elbert, I’m not upset. Who am I?", answer: "mt. massive" },
+        { question: "With a name that's Presidential, I rise high and proud — standing far from city crowd. Who am I?", answer: "mt. lincoln" },
+        { question: "Pair me with Kit Carson if you dare — my jagged edges aren’t that rare. Who am I?", answer: "challenger point" },
+        { question: "I may be Sherman by name, but I’m no soldier — still, I’ve stood tall for years, getting older. Who am I?", answer: "mt. sherman" }
+    ];
 
-  const btn = document.getElementById("riddleBtn");
-  const box = document.getElementById("riddleBox");
-  const answerSection = document.getElementById("answerSection");
-  const userAnswerInput = document.getElementById("userAnswer");
-  const checkBtn = document.getElementById("checkAnswerBtn");
-  const resultMsg = document.getElementById("resultMessage");
+    const btn = document.getElementById("riddleBtn");
+    const box = document.getElementById("riddleBox");
+    const answerSection = document.getElementById("answerSection");
+    const userAnswerInput = document.getElementById("userAnswer");
+    const checkBtn = document.getElementById("checkAnswerBtn");
+    const resultMsg = document.getElementById("resultMessage");
 
-  let currentAnswer = "";
+    let currentAnswer = "";
 
-  btn.addEventListener("click", () => {
-    // Pick a random riddle
-    const idx = Math.floor(Math.random() * riddles.length);
-    const riddle = riddles[idx];
-    currentAnswer = riddle.answer.toLowerCase().trim();
+    btn.addEventListener("click", () => {
+        // Pick a random riddle
+        const idx = Math.floor(Math.random() * riddles.length);
+        const riddle = riddles[idx];
+        currentAnswer = riddle.answer.toLowerCase().trim();
 
-    // Show riddle, clear previous input and messages
-    box.innerHTML = riddle.question;
-    userAnswerInput.value = "";
-    resultMsg.textContent = "";
-    answerSection.style.display = "block";
-    userAnswerInput.focus();
-  });
+        // Show riddle, clear previous input and messages
+        box.innerHTML = riddle.question;
+        userAnswerInput.value = "";
+        resultMsg.textContent = "";
+        answerSection.style.display = "block";
+        userAnswerInput.focus();
+    });
 
-  checkBtn.addEventListener("click", () => {
-    const userAnswer = userAnswerInput.value.toLowerCase().trim();
+    checkBtn.addEventListener("click", () => {
+        const userAnswer = userAnswerInput.value.toLowerCase().trim();
 
-    if (!userAnswer) {
-      resultMsg.style.color = "yellow";
-      resultMsg.textContent = "Please enter your answer before checking!";
-      return;
-    }
+        if (!userAnswer) {
+        resultMsg.style.color = "yellow";
+        resultMsg.textContent = "Please enter your answer before checking!";
+        return;
+        }
 
-    if (userAnswer === currentAnswer) {
-      resultMsg.style.color = "lightgreen";
-      resultMsg.innerHTML = `Correct! The answer is <strong>${currentAnswer}</strong> 🎉`;
-    } else {
-      resultMsg.style.color = "tomato";
-      resultMsg.innerHTML = `Incorrect. The correct answer is <strong>${currentAnswer}</strong>. Try the next one!`;
-    }
-  });
-</script>
+        if (userAnswer === currentAnswer) {
+        resultMsg.style.color = "lightgreen";
+        resultMsg.innerHTML = `Correct! The answer is <strong>${currentAnswer}</strong> 🎉`;
+        } else {
+        resultMsg.style.color = "tomato";
+        resultMsg.innerHTML = `Incorrect. The correct answer is <strong>${currentAnswer}</strong>. Try the next one!`;
+        }
+    });
+    </script>
 
-<p style="text-align: center; margin-top: 40px;">
-  <a href="#top" class="back-to-top">↑ Back to Top</a>
-</p>
+    <p style="text-align: center; margin-top: 40px;">
+    <a href="#top" class="back-to-top">↑ Back to Top</a>
+    </p>
 </body>
 
 </html>
