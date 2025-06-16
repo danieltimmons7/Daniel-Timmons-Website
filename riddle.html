@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>14er Riddle Game</title>
+    <style>
+        body {
+        background-color: #3fb0e0;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 30px;
+        }
+        #riddle-generator {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px;
+        }
+        button {
+        background-color: #ffffff;
+        color: #3fb0e0;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.1em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        }
+        button:hover {
+        background-color: #3fb0e0;
+        color: white;
+        }
+        .back-home {
+        display: block;
+        text-align: center;
+        margin-top: 40px;
+        color: white;
+        font-weight: bold;
+        text-decoration: underline;
+        }
+    </style>
+    </head>
+    <body>
+    <section id="riddle-generator">
+        <h2 style="text-align: center; margin-bottom: 20px;">🔍 14er Riddle Generator</h2>
+        <div id="riddleBox" style="font-size: 1.2em; text-align: center; margin-bottom: 20px;">
+        Click the button below to get a riddle!
+        </div>
+        <div style="text-align: center; margin-bottom: 15px;">
+        <button id="riddleBtn">Give Me a Riddle</button>
+        </div>
+        <div id="answerSection" style="text-align: center; display: none;">
+        <input id="userAnswer" type="text" placeholder="Type your answer here" style="padding: 8px; width: 60%; font-size: 1em; border-radius: 5px; border: none; margin-bottom: 10px;">
+        <br>
+        <button id="checkAnswerBtn">Check Answer</button>
+        </div>
+        <div id="resultMessage" style="font-size: 1.1em; margin-top: 15px; min-height: 30px;"></div>
+    </section>
+    <a href="14ers.html" class="back-home">← Back to 14ers Page</a>
+
+    <script>
+        const riddles = [
+        { question: "I’m Colorado’s tallest, I stand proud and free — hikers aim high to summit me. What 14er am I?", answer: "mt. elbert" },
+        { question: "I’m often climbed with my twin named Torrey — together we make a peak-filled story. Who am I?", answer: "gray's peak" },
+        { question: "With my flat summit and hidden trail, I test the brave who will not fail. Who am I?", answer: "mt. bross" },
+        { question: "I'm the second highest, don’t forget — though I lose to Elbert, I’m not upset. Who am I?", answer: "mt. massive" },
+        { question: "With a name that's Presidential, I rise high and proud — standing far from city crowd. Who am I?", answer: "mt. lincoln" },
+        { question: "Pair me with Kit Carson if you dare — my jagged edges aren’t that rare. Who am I?", answer: "challenger point" },
+        { question: "I may be Sherman by name, but I’m no soldier — still, I’ve stood tall for years, getting older. Who am I?", answer: "mt. sherman" }
+        ];
+
+        const btn = document.getElementById("riddleBtn");
+        const box = document.getElementById("riddleBox");
+        const answerSection = document.getElementById("answerSection");
+        const userAnswerInput = document.getElementById("userAnswer");
+        const checkBtn = document.getElementById("checkAnswerBtn");
+        const resultMsg = document.getElementById("resultMessage");
+
+        let currentAnswer = "";
+
+        btn.addEventListener("click", () => {
+        const idx = Math.floor(Math.random() * riddles.length);
+        const riddle = riddles[idx];
+        currentAnswer = riddle.answer.toLowerCase().trim();
+        box.innerHTML = riddle.question;
+        userAnswerInput.value = "";
+        resultMsg.textContent = "";
+        answerSection.style.display = "block";
+        userAnswerInput.focus();
+        });
+
+        checkBtn.addEventListener("click", () => {
+        const userAnswer = userAnswerInput.value.toLowerCase().trim();
+
+        if (!userAnswer) {
+            resultMsg.style.color = "yellow";
+            resultMsg.textContent = "Please enter your answer before checking!";
+            return;
+        }
+
+        if (userAnswer === currentAnswer) {
+            resultMsg.style.color = "lightgreen";
+            resultMsg.innerHTML = `Correct! The answer is <strong>${currentAnswer}</strong> 🎉`;
+        } else {
+            resultMsg.style.color = "tomato";
+            resultMsg.innerHTML = `Incorrect. The correct answer is <strong>${currentAnswer}</strong>. Try the next one!`;
+        }
+        });
+    </script>
+    </body>
+</html>
